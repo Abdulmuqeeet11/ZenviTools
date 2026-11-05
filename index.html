@@ -22,17 +22,6 @@
       content="Free, fast, and privacy-first online tools for PDFs, calculators, images, text, and QR codes."
     />
     <meta name="theme-color" content="#7045C6" />
-    <script>
-      (function () {
-        try {
-          var saved = localStorage.getItem('zenvi-theme');
-          var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-          if (saved === 'dark' || (!saved && prefersDark)) {
-            document.documentElement.classList.add('dark');
-          }
-        } catch (e) {}
-      })();
-    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

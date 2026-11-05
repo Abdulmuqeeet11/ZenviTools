@@ -88,13 +88,13 @@ export const LegalPages: React.FC<{ page: LegalPageType }> = ({ page }) => {
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <article className="bg-white dark:bg-[#19112B] border border-[#E4D9FA] dark:border-[#2E214D] rounded-2xl p-6 sm:p-10 shadow-xs space-y-6 transition-colors">
-        <h1 className="text-3xl sm:text-4xl font-bold text-[#38205F] dark:text-[#F3EEFF]">
+      <article className="bg-white border border-[#E4D9FA] rounded-2xl p-6 sm:p-10 shadow-xs space-y-6">
+        <h1 className="text-3xl sm:text-4xl font-bold text-[#38205F]">
           {current.heading}
         </h1>
 
         {page === 'about' && (
-          <div className="space-y-4 text-sm sm:text-base text-[#4A3B69] dark:text-[#C5B8E0] leading-relaxed">
+          <div className="space-y-4 text-sm sm:text-base text-[#4A3B69] leading-relaxed">
             <p>
               <strong>Zenvi Tools</strong> is a free, browser-based utility
               platform built around a simple idea: <em>All Your Tools. One Place.</em>
@@ -105,7 +105,7 @@ export const LegalPages: React.FC<{ page: LegalPageType }> = ({ page }) => {
               Wi-Fi QR code, Zenvi Tools brings 87 everyday utilities together in
               a clean, mobile-friendly interface.
             </p>
-            <h2 className="text-xl font-bold text-[#38205F] dark:text-[#F3EEFF] pt-2">
+            <h2 className="text-xl font-bold text-[#38205F] pt-2">
               Privacy-First Architecture
             </h2>
             <p>
@@ -127,22 +127,22 @@ export const LegalPages: React.FC<{ page: LegalPageType }> = ({ page }) => {
         )}
 
         {page === 'contact' && (
-          <div className="space-y-6 text-sm sm:text-base text-[#4A3B69] dark:text-[#C5B8E0]">
+          <div className="space-y-6 text-sm sm:text-base text-[#4A3B69]">
             <p className="leading-relaxed">
               Have a question, bug report, or tool suggestion? Reach out using
               the contact details below or prepare an inquiry message.
             </p>
 
-            <div className="rounded-xl bg-[#F7F3FF] dark:bg-[#120C20] border border-[#E4D9FA] dark:border-[#2E214D] p-4 text-sm space-y-1">
+            <div className="rounded-xl bg-[#F7F3FF] border border-[#E4D9FA] p-4 text-sm space-y-1">
               <p>
                 <strong>Support Email:</strong>{' '}
-                <span className="font-mono-tabular text-[#38205F] dark:text-[#F3EEFF]">
+                <span className="font-mono-tabular text-[#38205F]">
                   [contact@yourdomain.com]
                 </span>
               </p>
               <p>
                 <strong>Operator / Publisher:</strong>{' '}
-                <span className="text-[#38205F] dark:text-[#F3EEFF]">
+                <span className="text-[#38205F]">
                   [Your Name or Company Name, City, Country]
                 </span>
               </p>
@@ -156,7 +156,7 @@ export const LegalPages: React.FC<{ page: LegalPageType }> = ({ page }) => {
               className="space-y-4 max-w-lg"
             >
               <div>
-                <label className="block text-xs font-semibold text-[#38205F] dark:text-[#F3EEFF] mb-1">
+                <label className="block text-xs font-semibold text-[#38205F] mb-1">
                   Your Name
                 </label>
                 <input
@@ -165,11 +165,11 @@ export const LegalPages: React.FC<{ page: LegalPageType }> = ({ page }) => {
                   value={contactName}
                   onChange={(e) => setContactName(e.target.value)}
                   placeholder="Alex Morgan"
-                  className="w-full rounded-xl border border-[#D6C6F7] dark:border-[#362859] px-3.5 py-2.5 text-sm"
+                  className="w-full rounded-xl border border-[#D6C6F7] px-3.5 py-2.5 text-sm"
                 />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-[#38205F] dark:text-[#F3EEFF] mb-1">
+                <label className="block text-xs font-semibold text-[#38205F] mb-1">
                   Your Email
                 </label>
                 <input
@@ -178,11 +178,11 @@ export const LegalPages: React.FC<{ page: LegalPageType }> = ({ page }) => {
                   value={contactEmail}
                   onChange={(e) => setContactEmail(e.target.value)}
                   placeholder="alex@example.com"
-                  className="w-full rounded-xl border border-[#D6C6F7] dark:border-[#362859] px-3.5 py-2.5 text-sm"
+                  className="w-full rounded-xl border border-[#D6C6F7] px-3.5 py-2.5 text-sm"
                 />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-[#38205F] dark:text-[#F3EEFF] mb-1">
+                <label className="block text-xs font-semibold text-[#38205F] mb-1">
                   Message
                 </label>
                 <textarea
@@ -191,7 +191,7 @@ export const LegalPages: React.FC<{ page: LegalPageType }> = ({ page }) => {
                   value={contactMessage}
                   onChange={(e) => setContactMessage(e.target.value)}
                   placeholder="How can we help?"
-                  className="w-full rounded-xl border border-[#D6C6F7] dark:border-[#362859] px-3.5 py-2.5 text-sm"
+                  className="w-full rounded-xl border border-[#D6C6F7] px-3.5 py-2.5 text-sm"
                 />
               </div>
               <button
@@ -203,11 +203,11 @@ export const LegalPages: React.FC<{ page: LegalPageType }> = ({ page }) => {
             </form>
 
             {contactPrepared && (
-              <div className="rounded-xl border border-[#7045C6]/30 dark:border-[#A682FF]/30 bg-[#F7F3FF] dark:bg-[#120C20] p-4 flex items-start gap-2.5 text-sm text-[#38205F] dark:text-[#F3EEFF]">
-                <CheckCircle2 className="w-5 h-5 text-[#7045C6] dark:text-[#A682FF] shrink-0 mt-0.5" />
+              <div className="rounded-xl border border-[#7045C6]/30 bg-[#F7F3FF] p-4 flex items-start gap-2.5 text-sm text-[#38205F]">
+                <CheckCircle2 className="w-5 h-5 text-[#7045C6] shrink-0 mt-0.5" />
                 <div>
                   <p className="font-semibold">Message Prepared</p>
-                  <p className="text-xs text-[#5B4D7A] dark:text-[#A998CC] mt-1">
+                  <p className="text-xs text-[#5B4D7A] mt-1">
                     Because Zenvi Tools is a static client-side application
                     without a backend mail server, please send your message
                     directly to{' '}
@@ -221,11 +221,11 @@ export const LegalPages: React.FC<{ page: LegalPageType }> = ({ page }) => {
         )}
 
         {page === 'privacy-policy' && (
-          <div className="space-y-4 text-sm sm:text-base text-[#4A3B69] dark:text-[#C5B8E0] leading-relaxed">
-            <p className="text-xs text-[#7B6B9E] dark:text-[#8E7BB8]">
+          <div className="space-y-4 text-sm sm:text-base text-[#4A3B69] leading-relaxed">
+            <p className="text-xs text-[#7B6B9E]">
               Effective Date: November 5, 2026
             </p>
-            <h2 className="text-lg font-bold text-[#38205F] dark:text-[#F3EEFF]">
+            <h2 className="text-lg font-bold text-[#38205F]">
               1. Local File Processing
             </h2>
             <p>
@@ -233,7 +233,7 @@ export const LegalPages: React.FC<{ page: LegalPageType }> = ({ page }) => {
               within your web browser. We do not upload, store, or transmit your
               files to our servers.
             </p>
-            <h2 className="text-lg font-bold text-[#38205F] dark:text-[#F3EEFF]">
+            <h2 className="text-lg font-bold text-[#38205F]">
               2. Third-Party Services & APIs
             </h2>
             <p>
@@ -243,7 +243,7 @@ export const LegalPages: React.FC<{ page: LegalPageType }> = ({ page }) => {
               (such as your IP address) is handled by that third-party API
               provider.
             </p>
-            <h2 className="text-lg font-bold text-[#38205F] dark:text-[#F3EEFF]">
+            <h2 className="text-lg font-bold text-[#38205F]">
               3. Cookies & Future Advertising (Google AdSense)
             </h2>
             <p>
@@ -254,7 +254,7 @@ export const LegalPages: React.FC<{ page: LegalPageType }> = ({ page }) => {
               websites. Users may opt out of personalized advertising by
               visiting Google Ads Settings.
             </p>
-            <h2 className="text-lg font-bold text-[#38205F] dark:text-[#F3EEFF]">
+            <h2 className="text-lg font-bold text-[#38205F]">
               4. Contact Information
             </h2>
             <p>
@@ -265,25 +265,25 @@ export const LegalPages: React.FC<{ page: LegalPageType }> = ({ page }) => {
         )}
 
         {page === 'terms' && (
-          <div className="space-y-4 text-sm sm:text-base text-[#4A3B69] dark:text-[#C5B8E0] leading-relaxed">
-            <p className="text-xs text-[#7B6B9E] dark:text-[#8E7BB8]">
+          <div className="space-y-4 text-sm sm:text-base text-[#4A3B69] leading-relaxed">
+            <p className="text-xs text-[#7B6B9E]">
               Effective Date: November 5, 2026
             </p>
-            <h2 className="text-lg font-bold text-[#38205F] dark:text-[#F3EEFF]">
+            <h2 className="text-lg font-bold text-[#38205F]">
               1. Acceptance of Terms
             </h2>
             <p>
               By accessing and using Zenvi Tools, you agree to use the utilities
               solely for lawful purposes.
             </p>
-            <h2 className="text-lg font-bold text-[#38205F] dark:text-[#F3EEFF]">
+            <h2 className="text-lg font-bold text-[#38205F]">
               2. Authorized Document Use
             </h2>
             <p>
               Tools such as <strong>Unlock PDF</strong> are intended strictly for
               documents you own or are legally authorized to modify.
             </p>
-            <h2 className="text-lg font-bold text-[#38205F] dark:text-[#F3EEFF]">
+            <h2 className="text-lg font-bold text-[#38205F]">
               3. No Warranty
             </h2>
             <p>
@@ -295,7 +295,7 @@ export const LegalPages: React.FC<{ page: LegalPageType }> = ({ page }) => {
         )}
 
         {page === 'disclaimer' && (
-          <div className="space-y-4 text-sm sm:text-base text-[#4A3B69] dark:text-[#C5B8E0] leading-relaxed">
+          <div className="space-y-4 text-sm sm:text-base text-[#4A3B69] leading-relaxed">
             <p>
               <strong>Calculators:</strong> Financial, tax, loan EMI, salary,
               GPA, and BMI calculators are provided for informational and
@@ -317,7 +317,7 @@ export const LegalPages: React.FC<{ page: LegalPageType }> = ({ page }) => {
         )}
 
         {page === 'faq' && (
-          <div className="divide-y divide-[#F0E8FF] dark:divide-[#2E214D]">
+          <div className="divide-y divide-[#F0E8FF]">
             {GENERAL_FAQS.map((item, idx) => {
               const isOpen = openFaq === idx;
               return (
@@ -326,17 +326,17 @@ export const LegalPages: React.FC<{ page: LegalPageType }> = ({ page }) => {
                     type="button"
                     onClick={() => setOpenFaq(isOpen ? null : idx)}
                     aria-expanded={isOpen}
-                    className="w-full flex items-center justify-between gap-4 text-left font-semibold text-base text-[#38205F] dark:text-[#F3EEFF] hover:text-[#7045C6] dark:hover:text-[#A682FF] cursor-pointer"
+                    className="w-full flex items-center justify-between gap-4 text-left font-semibold text-base text-[#38205F] hover:text-[#7045C6] cursor-pointer"
                   >
                     <span>{item.q}</span>
                     <ChevronDown
-                      className={`w-4 h-4 text-[#7045C6] dark:text-[#A682FF] shrink-0 transition-transform ${
+                      className={`w-4 h-4 text-[#7045C6] shrink-0 transition-transform ${
                         isOpen ? 'rotate-180' : ''
                       }`}
                     />
                   </button>
                   {isOpen && (
-                    <p className="mt-2 text-sm text-[#4A3B69] dark:text-[#C5B8E0] leading-relaxed">
+                    <p className="mt-2 text-sm text-[#4A3B69] leading-relaxed">
                       {item.a}
                     </p>
                   )}

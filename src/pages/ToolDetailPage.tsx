@@ -25,9 +25,9 @@ export const ToolDetailPage: React.FC<{ toolId: string }> = ({ toolId }) => {
   if (!tool) {
     return (
       <div className="max-w-2xl mx-auto px-4 py-16 text-center">
-        <div className="bg-white dark:bg-[#171026] border border-[#E4D9FA] dark:border-[#2F224D] rounded-2xl p-8">
-          <h1 className="text-2xl font-bold text-[#38205F] dark:text-[#F3EEFF]">Tool Not Found</h1>
-          <p className="mt-2 text-sm text-[#5B4D7A] dark:text-[#B5A6D6]">
+        <div className="bg-white border border-[#E4D9FA] rounded-2xl p-8">
+          <h1 className="text-2xl font-bold text-[#38205F]">Tool Not Found</h1>
+          <p className="mt-2 text-sm text-[#5B4D7A]">
             The tool you requested could not be found. Browse all available
             tools below.
           </p>
@@ -47,7 +47,7 @@ export const ToolDetailPage: React.FC<{ toolId: string }> = ({ toolId }) => {
     <ToolPageLayout tool={tool}>
       <Suspense
         fallback={
-          <div className="py-12 text-center text-sm text-[#5B4D7A] dark:text-[#B5A6D6]">
+          <div className="py-12 text-center text-sm text-[#5B4D7A]">
             Loading {tool.name}...
           </div>
         }

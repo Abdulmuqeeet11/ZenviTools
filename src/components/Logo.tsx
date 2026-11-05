@@ -1,4 +1,3 @@
-'use client';
 import React from 'react';
 
 export const LogoIcon: React.FC<{ className?: string }> = ({ className = 'w-7 h-7' }) => (

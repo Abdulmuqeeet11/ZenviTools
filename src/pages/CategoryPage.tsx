@@ -21,12 +21,12 @@ export const CategoryPage: React.FC<{ category: CategoryInfo }> = ({
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <nav aria-label="Breadcrumb" className="mb-6">
-        <ol className="flex items-center gap-1.5 text-xs sm:text-sm text-[#5B4D7A] dark:text-[#B5A6D6]">
+        <ol className="flex items-center gap-1.5 text-xs sm:text-sm text-[#5B4D7A]">
           <li>
             <a
               href="/"
               onClick={(e) => handleLinkClick(e, '/')}
-              className="hover:text-[#7045C6] dark:hover:text-[#A985FF]"
+              className="hover:text-[#7045C6]"
             >
               Home
             </a>
@@ -34,17 +34,17 @@ export const CategoryPage: React.FC<{ category: CategoryInfo }> = ({
           <li aria-hidden="true">
             <ChevronRight className="w-3.5 h-3.5 text-[#8C7CAE]" />
           </li>
-          <li className="font-semibold text-[#38205F] dark:text-[#F3EEFF]" aria-current="page">
+          <li className="font-semibold text-[#38205F]" aria-current="page">
             {category.name}
           </li>
         </ol>
       </nav>
 
       <header className="mb-8">
-        <h1 className="text-3xl sm:text-4xl font-bold text-[#38205F] dark:text-[#F3EEFF]">
+        <h1 className="text-3xl sm:text-4xl font-bold text-[#38205F]">
           {category.name}
         </h1>
-        <p className="mt-3 text-base sm:text-lg text-[#4A3B69] dark:text-[#C4B6E3] max-w-3xl">
+        <p className="mt-3 text-base sm:text-lg text-[#4A3B69] max-w-3xl">
           {category.description}
         </p>
       </header>

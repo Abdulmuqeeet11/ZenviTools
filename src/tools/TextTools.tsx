@@ -1,4 +1,3 @@
-'use client';
 import React, { useState, useEffect } from 'react';
 import { Copy, Check, Trash2, Volume2, Square, Pause, Play, AlertCircle } from 'lucide-react';
 import { copyToClipboard } from '../utils/download';
@@ -484,12 +483,8 @@ export const TextTools: React.FC<{ toolId: string }> = ({ toolId }) => {
   } else if (toolId === 'text-cleaner') {
     let out = text;
     if (stripHtml) {
-      if (typeof DOMParser !== 'undefined') {
-        const doc = new DOMParser().parseFromString(out, 'text/html');
-        out = doc.body.textContent || '';
-      } else {
-        out = out.replace(/<[^>]*>/g, '');
-      }
+      const doc = new DOMParser().parseFromString(out, 'text/html');
+      out = doc.body.textContent || '';
     }
     if (collapseSpaces) {
       out = out

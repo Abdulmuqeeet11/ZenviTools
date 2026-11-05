@@ -76,12 +76,12 @@ export const HomePage: React.FC = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-white dark:bg-[#19112B] border-b border-[#E4D9FA] dark:border-[#2E214D] py-14 sm:py-20 px-4 sm:px-6 lg:px-8 transition-colors">
+      <section className="bg-white border-b border-[#E4D9FA] py-14 sm:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl sm:text-5xl font-bold text-[#38205F] dark:text-[#F3EEFF] tracking-tight leading-tight">
+          <h1 className="text-3xl sm:text-5xl font-bold text-[#38205F] tracking-tight leading-tight">
             All Your Tools. One Place.
           </h1>
-          <p className="mt-4 text-base sm:text-lg text-[#4A3B69] dark:text-[#C5B8E0] max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-[#4A3B69] max-w-2xl mx-auto leading-relaxed">
             Fast, free, and privacy-first online tools for PDFs, calculators,
             images, text, and QR codes. Everything runs directly in your browser
             with no account required.
@@ -91,7 +91,7 @@ export const HomePage: React.FC = () => {
             <SearchBar />
           </div>
 
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs sm:text-sm text-[#5B4D7A] dark:text-[#A998CC]">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs sm:text-sm text-[#5B4D7A]">
             <span>{TOOLS_REGISTRY.length} Free Tools</span>
             <span aria-hidden="true">·</span>
             <span>Client-Side Privacy</span>
@@ -108,18 +108,18 @@ export const HomePage: React.FC = () => {
             <div>
               <h2
                 id="categories-heading"
-                className="text-2xl font-bold text-[#38205F] dark:text-[#F3EEFF]"
+                className="text-2xl font-bold text-[#38205F]"
               >
                 Browse by Category
               </h2>
-              <p className="text-sm text-[#5B4D7A] dark:text-[#A998CC] mt-1">
+              <p className="text-sm text-[#5B4D7A] mt-1">
                 Explore organized toolkits for documents, math, media, writing, and everyday utilities.
               </p>
             </div>
             <a
               href="/all-tools"
               onClick={(e) => handleLinkClick(e, '/all-tools')}
-              className="inline-flex items-center gap-1 text-sm font-semibold text-[#7045C6] dark:text-[#A682FF] hover:underline whitespace-nowrap shrink-0"
+              className="inline-flex items-center gap-1 text-sm font-semibold text-[#7045C6] hover:underline whitespace-nowrap shrink-0"
             >
               <span>View all {TOOLS_REGISTRY.length} tools</span>
               <ArrowRight className="w-4 h-4" />
@@ -132,20 +132,20 @@ export const HomePage: React.FC = () => {
                 key={cat.id}
                 href={`/${cat.slug}`}
                 onClick={(e) => handleLinkClick(e, `/${cat.slug}`)}
-                className="group bg-white dark:bg-[#19112B] border border-[#E4D9FA] dark:border-[#2E214D] rounded-2xl p-5 shadow-[0_2px_10px_rgba(112,69,198,0.04)] hover:shadow-[0_8px_24px_rgba(112,69,198,0.10)] dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.4)] hover:border-[#7045C6]/50 dark:hover:border-[#A682FF]/50 transition-all flex flex-col justify-between"
+                className="group bg-white border border-[#E4D9FA] rounded-2xl p-5 shadow-[0_2px_10px_rgba(112,69,198,0.04)] hover:shadow-[0_8px_24px_rgba(112,69,198,0.10)] hover:border-[#7045C6]/50 transition-all flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-11 h-11 rounded-xl bg-[#F7F3FF] dark:bg-[#251A3E] border border-[#E4D9FA] dark:border-[#362859] flex items-center justify-center mb-4">
+                  <div className="w-11 h-11 rounded-xl bg-[#F7F3FF] border border-[#E4D9FA] flex items-center justify-center mb-4">
                     {getCategoryIcon(cat.id)}
                   </div>
-                  <h3 className="text-base font-bold text-[#38205F] dark:text-[#F3EEFF] group-hover:text-[#7045C6] dark:group-hover:text-[#A682FF] transition-colors">
+                  <h3 className="text-base font-bold text-[#38205F] group-hover:text-[#7045C6] transition-colors">
                     {cat.name}
                   </h3>
-                  <p className="mt-1.5 text-xs text-[#5B4D7A] dark:text-[#A998CC] leading-relaxed">
+                  <p className="mt-1.5 text-xs text-[#5B4D7A] leading-relaxed">
                     {cat.description}
                   </p>
                 </div>
-                <p className="mt-4 pt-3 border-t border-[#F3ECFF] dark:border-[#2E214D] text-xs font-semibold text-[#7045C6] dark:text-[#A682FF] font-mono-tabular">
+                <p className="mt-4 pt-3 border-t border-[#F3ECFF] text-xs font-semibold text-[#7045C6] font-mono-tabular">
                   {cat.toolCount} tools →
                 </p>
               </a>
@@ -159,11 +159,11 @@ export const HomePage: React.FC = () => {
             <div>
               <h2
                 id="popular-heading"
-                className="text-2xl font-bold text-[#38205F] dark:text-[#F3EEFF]"
+                className="text-2xl font-bold text-[#38205F]"
               >
                 Popular Tools
               </h2>
-              <p className="text-sm text-[#5B4D7A] dark:text-[#A998CC] mt-1">
+              <p className="text-sm text-[#5B4D7A] mt-1">
                 Most-used everyday utilities across PDF, image, calculator, and QR workflows.
               </p>
             </div>
@@ -180,11 +180,11 @@ export const HomePage: React.FC = () => {
           <div className="mb-6">
             <h2
               id="recent-heading"
-              className="text-2xl font-bold text-[#38205F] dark:text-[#F3EEFF]"
+              className="text-2xl font-bold text-[#38205F]"
             >
               Recently Added Tools
             </h2>
-            <p className="text-sm text-[#5B4D7A] dark:text-[#A998CC] mt-1">
+            <p className="text-sm text-[#5B4D7A] mt-1">
               Newly added utilities ready to use in your browser.
             </p>
           </div>
@@ -201,18 +201,18 @@ export const HomePage: React.FC = () => {
             <div>
               <h2
                 id="featured-pdf-heading"
-                className="text-2xl font-bold text-[#38205F] dark:text-[#F3EEFF]"
+                className="text-2xl font-bold text-[#38205F]"
               >
                 Featured PDF & Document Tools
               </h2>
-              <p className="text-sm text-[#5B4D7A] dark:text-[#A998CC] mt-1">
+              <p className="text-sm text-[#5B4D7A] mt-1">
                 Convert images and office files to PDF, or merge, split, and compress PDFs locally.
               </p>
             </div>
             <a
               href="/pdf-tools"
               onClick={(e) => handleLinkClick(e, '/pdf-tools')}
-              className="inline-flex items-center gap-1 text-sm font-semibold text-[#7045C6] dark:text-[#A682FF] hover:underline whitespace-nowrap shrink-0"
+              className="inline-flex items-center gap-1 text-sm font-semibold text-[#7045C6] hover:underline whitespace-nowrap shrink-0"
             >
               <span>All 20 PDF tools</span>
               <ArrowRight className="w-4 h-4" />
@@ -231,18 +231,18 @@ export const HomePage: React.FC = () => {
             <div>
               <h2
                 id="featured-calc-heading"
-                className="text-2xl font-bold text-[#38205F] dark:text-[#F3EEFF]"
+                className="text-2xl font-bold text-[#38205F]"
               >
                 Featured Calculators
               </h2>
-              <p className="text-sm text-[#5B4D7A] dark:text-[#A998CC] mt-1">
+              <p className="text-sm text-[#5B4D7A] mt-1">
                 Instant, accurate math for percentages, finance, grades, health, and dates.
               </p>
             </div>
             <a
               href="/calculators"
               onClick={(e) => handleLinkClick(e, '/calculators')}
-              className="inline-flex items-center gap-1 text-sm font-semibold text-[#7045C6] dark:text-[#A682FF] hover:underline whitespace-nowrap shrink-0"
+              className="inline-flex items-center gap-1 text-sm font-semibold text-[#7045C6] hover:underline whitespace-nowrap shrink-0"
             >
               <span>All 20 calculators</span>
               <ArrowRight className="w-4 h-4" />
@@ -261,15 +261,15 @@ export const HomePage: React.FC = () => {
         {/* FAQ Section */}
         <section
           aria-labelledby="home-faq-heading"
-          className="bg-white dark:bg-[#19112B] border border-[#E4D9FA] dark:border-[#2E214D] rounded-2xl p-6 sm:p-8 transition-colors"
+          className="bg-white border border-[#E4D9FA] rounded-2xl p-6 sm:p-8"
         >
           <h2
             id="home-faq-heading"
-            className="text-2xl font-bold text-[#38205F] dark:text-[#F3EEFF] mb-5"
+            className="text-2xl font-bold text-[#38205F] mb-5"
           >
             Frequently Asked Questions
           </h2>
-          <div className="divide-y divide-[#F0E8FF] dark:divide-[#2E214D]">
+          <div className="divide-y divide-[#F0E8FF]">
             {HOME_FAQS.map((faq, idx) => {
               const isOpen = openFaq === idx;
               return (
@@ -278,17 +278,17 @@ export const HomePage: React.FC = () => {
                     type="button"
                     onClick={() => setOpenFaq(isOpen ? null : idx)}
                     aria-expanded={isOpen}
-                    className="w-full flex items-center justify-between gap-4 text-left font-semibold text-sm sm:text-base text-[#38205F] dark:text-[#F3EEFF] hover:text-[#7045C6] dark:hover:text-[#A682FF] transition-colors cursor-pointer"
+                    className="w-full flex items-center justify-between gap-4 text-left font-semibold text-sm sm:text-base text-[#38205F] hover:text-[#7045C6] transition-colors cursor-pointer"
                   >
                     <span>{faq.question}</span>
                     <ChevronDown
-                      className={`w-4 h-4 text-[#7045C6] dark:text-[#A682FF] shrink-0 transition-transform ${
+                      className={`w-4 h-4 text-[#7045C6] shrink-0 transition-transform ${
                         isOpen ? 'rotate-180' : ''
                       }`}
                     />
                   </button>
                   {isOpen && (
-                    <p className="mt-2 text-sm text-[#4A3B69] dark:text-[#C5B8E0] leading-relaxed">
+                    <p className="mt-2 text-sm text-[#4A3B69] leading-relaxed">
                       {faq.answer}
                     </p>
                   )}

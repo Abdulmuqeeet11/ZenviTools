@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
   :root {
@@ -12,24 +11,6 @@
     background-color: #F7F3FF;
     color: #1E1533;
     overflow-x: hidden;
-  }
-
-  .dark body {
-    background-color: #0F0A1A;
-    color: #F3EEFF;
-  }
-
-  .dark input:not([type='checkbox']):not([type='radio']):not([type='range']):not([type='color']),
-  .dark textarea,
-  .dark select {
-    background-color: #120C20;
-    color: #F3EEFF;
-    border-color: #362859;
-  }
-
-  .dark input::placeholder,
-  .dark textarea::placeholder {
-    color: #8E7DB5;
   }
 
   h1, h2, h3, h4 {
