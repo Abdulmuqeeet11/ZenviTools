@@ -1,4 +1,3 @@
-'use client';
 import React, { useRef, useState } from 'react';
 import { Upload, X, ArrowUp, ArrowDown, File as FileIcon, AlertCircle, Loader2 } from 'lucide-react';
 import { formatBytes } from '../utils/download';

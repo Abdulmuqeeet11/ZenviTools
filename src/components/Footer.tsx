@@ -1,4 +1,3 @@
-'use client';
 import React from 'react';
 import { LogoIcon } from './Logo';
 import { handleLinkClick } from '../utils/navigation';

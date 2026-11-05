@@ -1,4 +1,3 @@
-'use client';
 import React, { useState } from 'react';
 import { ChevronDown, CheckCircle2 } from 'lucide-react';
 import { usePageSeo } from '../components/ToolPageLayout';

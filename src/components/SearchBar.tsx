@@ -1,4 +1,3 @@
-'use client';
 import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { Search, X } from 'lucide-react';
 import { searchTools, getCategoryById } from '../data/toolsRegistry';

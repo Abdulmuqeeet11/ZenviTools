@@ -1,4 +1,3 @@
-'use client';
 import React, { Suspense, lazy } from 'react';
 import { getToolById } from '../data/toolsRegistry';
 import { ToolPageLayout } from '../components/ToolPageLayout';
