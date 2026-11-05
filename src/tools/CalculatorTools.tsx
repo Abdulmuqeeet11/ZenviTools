@@ -1,4 +1,3 @@
-'use client';
 import React, { useState, useEffect } from 'react';
 import { RotateCcw, Plus, Trash2, AlertCircle, Copy, Check, Calculator } from 'lucide-react';
 import {
@@ -54,7 +53,7 @@ const InputField: React.FC<{
 
   return (
     <div>
-      <label className="block text-sm font-semibold text-[#38205F] mb-1">
+      <label className="block text-sm font-semibold text-[#38205F] dark:text-[#F3EEFF] mb-1">
         {label}
       </label>
       <input
@@ -66,9 +65,9 @@ const InputField: React.FC<{
         value={value}
         placeholder={placeholder}
         onChange={(e) => handleChange(e.target.value)}
-        className="w-full min-h-[48px] rounded-xl border border-[#D6C6F7] bg-white px-3.5 py-2.5 text-base font-mono-tabular text-[#1E1533] placeholder:text-[#9A8BB8] focus:outline-none focus:border-[#7045C6] focus:ring-2 focus:ring-[#7045C6]/15"
+        className="w-full min-h-[48px] rounded-xl border border-[#D6C6F7] dark:border-[#362859] bg-white dark:bg-[#120C20] px-3.5 py-2.5 text-base font-mono-tabular text-[#1E1533] dark:text-[#F3EEFF] placeholder:text-[#9A8BB8] dark:placeholder:text-[#7B6B9E] focus:outline-none focus:border-[#7045C6] dark:focus:border-[#A682FF] focus:ring-2 focus:ring-[#7045C6]/15"
       />
-      {hint && <p className="mt-1 text-xs text-[#5B4D7A] leading-snug">{hint}</p>}
+      {hint && <p className="mt-1 text-xs text-[#5B4D7A] dark:text-[#A998CC] leading-snug">{hint}</p>}
     </div>
   );
 };
@@ -76,7 +75,7 @@ const InputField: React.FC<{
 const ValidationAlert: React.FC<{ message: string }> = ({ message }) => (
   <div
     role="alert"
-    className="flex items-start gap-2.5 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"
+    className="flex items-start gap-2.5 rounded-xl border border-red-200 dark:border-red-900/50 bg-red-50 dark:bg-red-950/40 px-4 py-3 text-sm text-red-700 dark:text-red-300"
   >
     <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
     <span>{message}</span>
@@ -121,7 +120,7 @@ const CalculatorShell: React.FC<{
   return (
     <div className="space-y-6">
       {/* 1. One-line beginner-friendly explanation */}
-      <p className="text-sm sm:text-base text-[#4A3B69] bg-[#F7F3FF] border border-[#E4D9FA] rounded-xl px-4 py-3">
+      <p className="text-sm sm:text-base text-[#4A3B69] dark:text-[#C5B8E0] bg-[#F7F3FF] dark:bg-[#120C20] border border-[#E4D9FA] dark:border-[#2E214D] rounded-xl px-4 py-3">
         {intro}
       </p>
 
@@ -142,7 +141,7 @@ const CalculatorShell: React.FC<{
         <button
           type="button"
           onClick={onReset}
-          className="inline-flex items-center justify-center gap-1.5 min-h-[44px] px-4 py-2.5 rounded-xl text-sm font-semibold text-[#38205F] bg-[#F7F3FF] border border-[#D6C6F7] hover:bg-[#EDE4FF] transition-colors cursor-pointer"
+          className="inline-flex items-center justify-center gap-1.5 min-h-[44px] px-4 py-2.5 rounded-xl text-sm font-semibold text-[#38205F] dark:text-[#F3EEFF] bg-[#F7F3FF] dark:bg-[#251A3E] border border-[#D6C6F7] dark:border-[#362859] hover:bg-[#EDE4FF] dark:hover:bg-[#312352] transition-colors cursor-pointer"
         >
           <RotateCcw className="w-4 h-4" />
           Reset
@@ -152,9 +151,9 @@ const CalculatorShell: React.FC<{
           <button
             type="button"
             onClick={handleCopy}
-            className="inline-flex items-center justify-center gap-1.5 min-h-[44px] px-4 py-2.5 rounded-xl text-sm font-semibold text-[#7045C6] bg-white border border-[#D6C6F7] hover:bg-[#F7F3FF] transition-colors cursor-pointer"
+            className="inline-flex items-center justify-center gap-1.5 min-h-[44px] px-4 py-2.5 rounded-xl text-sm font-semibold text-[#7045C6] dark:text-[#A682FF] bg-white dark:bg-[#19112B] border border-[#D6C6F7] dark:border-[#362859] hover:bg-[#F7F3FF] dark:hover:bg-[#251A3E] transition-colors cursor-pointer"
           >
-            {copied ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4" />}
+            {copied ? <Check className="w-4 h-4 text-emerald-600 dark:text-emerald-400" /> : <Copy className="w-4 h-4" />}
             {copied ? 'Copied!' : 'Copy Result'}
           </button>
         )}
@@ -165,25 +164,25 @@ const CalculatorShell: React.FC<{
 
       {/* 4. Large, prominent Result section + 5. Step-by-step explanation */}
       {showResult && (
-        <div className="rounded-2xl bg-[#F7F3FF] border border-[#D6C6F7] p-5 space-y-4">
+        <div className="rounded-2xl bg-[#F7F3FF] dark:bg-[#120C20] border border-[#D6C6F7] dark:border-[#362859] p-5 space-y-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {output.items.map((item, idx) => (
               <div
                 key={idx}
                 className={`rounded-xl p-4 border ${
                   item.highlight
-                    ? 'bg-white border-[#7045C6]/50 shadow-2xs sm:col-span-2 lg:col-span-1'
-                    : 'bg-white/80 border-[#E4D9FA]'
+                    ? 'bg-white dark:bg-[#19112B] border-[#7045C6]/50 dark:border-[#A682FF]/50 shadow-2xs sm:col-span-2 lg:col-span-1'
+                    : 'bg-white/80 dark:bg-[#19112B]/80 border-[#E4D9FA] dark:border-[#2E214D]'
                 }`}
               >
-                <p className="text-xs font-semibold uppercase tracking-wide text-[#5B4D7A]">
+                <p className="text-xs font-semibold uppercase tracking-wide text-[#5B4D7A] dark:text-[#A998CC]">
                   {item.label}
                 </p>
                 <p
                   className={`mt-1.5 font-mono-tabular font-bold break-words ${
                     item.highlight
-                      ? 'text-2xl sm:text-3xl text-[#7045C6]'
-                      : 'text-lg text-[#38205F]'
+                      ? 'text-2xl sm:text-3xl text-[#7045C6] dark:text-[#A682FF]'
+                      : 'text-lg text-[#38205F] dark:text-[#F3EEFF]'
                   }`}
                 >
                   {item.value}
@@ -193,11 +192,11 @@ const CalculatorShell: React.FC<{
           </div>
 
           {output.steps.length > 0 && (
-            <div className="pt-3 border-t border-[#E4D9FA]">
-              <p className="text-xs font-bold uppercase tracking-wide text-[#38205F] mb-2">
+            <div className="pt-3 border-t border-[#E4D9FA] dark:border-[#2E214D]">
+              <p className="text-xs font-bold uppercase tracking-wide text-[#38205F] dark:text-[#F3EEFF] mb-2">
                 How this was calculated
               </p>
-              <ol className="space-y-1.5 text-sm text-[#4A3B69] list-decimal list-inside">
+              <ol className="space-y-1.5 text-sm text-[#4A3B69] dark:text-[#C5B8E0] list-decimal list-inside">
                 {output.steps.map((step, i) => (
                   <li key={i} className="leading-relaxed">
                     {step}
@@ -210,8 +209,8 @@ const CalculatorShell: React.FC<{
       )}
 
       {/* 6. Simple Example */}
-      <div className="rounded-xl bg-white border border-[#E4D9FA] px-4 py-3 text-xs sm:text-sm text-[#5B4D7A]">
-        <strong className="text-[#38205F]">Example:</strong> {example}
+      <div className="rounded-xl bg-white dark:bg-[#120C20] border border-[#E4D9FA] dark:border-[#2E214D] px-4 py-3 text-xs sm:text-sm text-[#5B4D7A] dark:text-[#A998CC]">
+        <strong className="text-[#38205F] dark:text-[#F3EEFF]">Example:</strong> {example}
       </div>
     </div>
   );

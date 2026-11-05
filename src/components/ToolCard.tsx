@@ -1,4 +1,3 @@
-'use client';
 import React from 'react';
 import {
   FileText,
@@ -20,7 +19,7 @@ const CATEGORY_LABELS: Record<ToolCategoryId, string> = {
 };
 
 function CategoryIcon({ category }: { category: ToolCategoryId }) {
-  const cls = 'w-5 h-5 text-[#7045C6]';
+  const cls = 'w-5 h-5 text-[#7045C6] dark:text-[#A985FF]';
   switch (category) {
     case 'pdf':
       return <FileText className={cls} />;
@@ -46,37 +45,37 @@ export const ToolCard: React.FC<ToolCardProps> = ({ tool }) => {
     <a
       href={href}
       onClick={(e) => handleLinkClick(e, href)}
-      className="group flex flex-col justify-between bg-white border border-[#E4D9FA] rounded-2xl p-5 hover:border-[#7045C6] transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7045C6]"
+      className="group flex flex-col justify-between bg-white dark:bg-[#171026] border border-[#E4D9FA] dark:border-[#2F224D] rounded-2xl p-5 hover:border-[#7045C6] dark:hover:border-[#A985FF] transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7045C6]"
     >
       <div>
         <div className="flex items-center justify-between gap-3 mb-3">
-          <div className="w-10 h-10 rounded-xl bg-[#F7F3FF] border border-[#E4D9FA] flex items-center justify-center shrink-0">
+          <div className="w-10 h-10 rounded-xl bg-[#F7F3FF] dark:bg-[#211738] border border-[#E4D9FA] dark:border-[#2F224D] flex items-center justify-center shrink-0">
             <CategoryIcon category={tool.category} />
           </div>
-          <ArrowUpRight className="w-4 h-4 text-[#8C7CAE] group-hover:text-[#7045C6] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0" />
+          <ArrowUpRight className="w-4 h-4 text-[#8C7CAE] group-hover:text-[#7045C6] dark:group-hover:text-[#A985FF] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0" />
         </div>
 
-        <h3 className="text-base font-semibold text-[#38205F] group-hover:text-[#7045C6] transition-colors mb-1.5">
+        <h3 className="text-base font-semibold text-[#38205F] dark:text-[#F3EEFF] group-hover:text-[#7045C6] dark:group-hover:text-[#A985FF] transition-colors mb-1.5">
           {tool.name}
         </h3>
 
-        <p className="text-sm text-[#5B4D7A] leading-relaxed line-clamp-2">
+        <p className="text-sm text-[#5B4D7A] dark:text-[#B5A6D6] leading-relaxed line-clamp-2">
           {tool.shortDescription}
         </p>
       </div>
 
-      <div className="mt-4 pt-3 border-t border-[#F3ECFF] flex items-center gap-2 text-xs text-[#7B6B9E]">
+      <div className="mt-4 pt-3 border-t border-[#F3ECFF] dark:border-[#281C42] flex items-center gap-2 text-xs text-[#7B6B9E] dark:text-[#9E8EC4]">
         <span>{CATEGORY_LABELS[tool.category]}</span>
         {tool.popular && (
           <>
             <span aria-hidden="true">·</span>
-            <span className="font-medium text-[#7045C6]">Popular</span>
+            <span className="font-medium text-[#7045C6] dark:text-[#A985FF]">Popular</span>
           </>
         )}
         {tool.recentlyAdded && (
           <>
             <span aria-hidden="true">·</span>
-            <span className="font-medium text-[#38205F]">New</span>
+            <span className="font-medium text-[#38205F] dark:text-[#E5DCFF]">New</span>
           </>
         )}
       </div>

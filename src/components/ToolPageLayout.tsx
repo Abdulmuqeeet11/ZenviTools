@@ -1,4 +1,3 @@
-'use client';
 import React, { useEffect, useState } from 'react';
 import { ChevronRight, ShieldCheck, ChevronDown } from 'lucide-react';
 import { ToolDefinition } from '../types/tools';
@@ -64,12 +63,12 @@ export const ToolPageLayout: React.FC<ToolPageLayoutProps> = ({
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
       {/* Breadcrumb Navigation */}
       <nav aria-label="Breadcrumb" className="mb-6">
-        <ol className="flex flex-wrap items-center gap-1.5 text-xs sm:text-sm text-[#5B4D7A]">
+        <ol className="flex flex-wrap items-center gap-1.5 text-xs sm:text-sm text-[#5B4D7A] dark:text-[#B5A6D6]">
           <li>
             <a
               href="/"
               onClick={(e) => handleLinkClick(e, '/')}
-              className="hover:text-[#7045C6] transition-colors"
+              className="hover:text-[#7045C6] dark:hover:text-[#A985FF] transition-colors"
             >
               Home
             </a>
@@ -83,7 +82,7 @@ export const ToolPageLayout: React.FC<ToolPageLayoutProps> = ({
                 <a
                   href={`/${category.slug}`}
                   onClick={(e) => handleLinkClick(e, `/${category.slug}`)}
-                  className="hover:text-[#7045C6] transition-colors"
+                  className="hover:text-[#7045C6] dark:hover:text-[#A985FF] transition-colors"
                 >
                   {category.name}
                 </a>
@@ -93,7 +92,7 @@ export const ToolPageLayout: React.FC<ToolPageLayoutProps> = ({
               </li>
             </>
           )}
-          <li className="font-semibold text-[#38205F]" aria-current="page">
+          <li className="font-semibold text-[#38205F] dark:text-[#F3EEFF]" aria-current="page">
             {tool.name}
           </li>
         </ol>
@@ -101,16 +100,16 @@ export const ToolPageLayout: React.FC<ToolPageLayoutProps> = ({
 
       {/* Tool Header */}
       <header className="mb-8">
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#38205F] tracking-tight">
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#38205F] dark:text-[#F3EEFF] tracking-tight">
           {tool.name}
         </h1>
-        <p className="mt-3 text-base sm:text-lg text-[#4A3B69] max-w-3xl leading-relaxed">
+        <p className="mt-3 text-base sm:text-lg text-[#4A3B69] dark:text-[#C4B6E3] max-w-3xl leading-relaxed">
           {tool.fullDescription}
         </p>
 
-        <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-[#5B4D7A]">
-          <span className="inline-flex items-center gap-1.5 font-medium text-[#38205F]">
-            <ShieldCheck className="w-4 h-4 text-[#7045C6]" />
+        <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-[#5B4D7A] dark:text-[#B5A6D6]">
+          <span className="inline-flex items-center gap-1.5 font-medium text-[#38205F] dark:text-[#F3EEFF]">
+            <ShieldCheck className="w-4 h-4 text-[#7045C6] dark:text-[#A985FF]" />
             Processed locally in your browser
           </span>
           {tool.supportedFormats && tool.supportedFormats.length > 0 && (
@@ -118,7 +117,7 @@ export const ToolPageLayout: React.FC<ToolPageLayoutProps> = ({
               <span aria-hidden="true">·</span>
               <span>
                 Supported formats:{' '}
-                <strong className="font-semibold text-[#38205F]">
+                <strong className="font-semibold text-[#38205F] dark:text-[#F3EEFF]">
                   {tool.supportedFormats.join(', ')}
                 </strong>
               </span>
@@ -130,7 +129,7 @@ export const ToolPageLayout: React.FC<ToolPageLayoutProps> = ({
       {/* Main Interactive Tool Workspace */}
       <section
         aria-label={`${tool.name} Workspace`}
-        className="bg-white border border-[#E4D9FA] rounded-2xl p-5 sm:p-8 shadow-[0_4px_24px_rgba(112,69,198,0.06)]"
+        className="bg-white dark:bg-[#171026] border border-[#E4D9FA] dark:border-[#2F224D] rounded-2xl p-5 sm:p-8 shadow-[0_4px_24px_rgba(112,69,198,0.06)]"
       >
         {children}
       </section>
@@ -140,14 +139,14 @@ export const ToolPageLayout: React.FC<ToolPageLayoutProps> = ({
 
       {/* Instructions & Examples */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
-        <section className="bg-white border border-[#E4D9FA] rounded-2xl p-6">
-          <h2 className="text-lg font-bold text-[#38205F] mb-4">
+        <section className="bg-white dark:bg-[#171026] border border-[#E4D9FA] dark:border-[#2F224D] rounded-2xl p-6">
+          <h2 className="text-lg font-bold text-[#38205F] dark:text-[#F3EEFF] mb-4">
             How to Use {tool.name}
           </h2>
-          <ol className="space-y-3 text-sm text-[#4A3B69]">
+          <ol className="space-y-3 text-sm text-[#4A3B69] dark:text-[#C4B6E3]">
             {tool.instructions.map((step, index) => (
               <li key={index} className="flex items-start gap-3">
-                <span className="w-6 h-6 rounded-full bg-[#F7F3FF] border border-[#D6C6F7] text-[#7045C6] font-semibold text-xs flex items-center justify-center shrink-0 mt-0.5 tabular-nums">
+                <span className="w-6 h-6 rounded-full bg-[#F7F3FF] dark:bg-[#211738] border border-[#D6C6F7] dark:border-[#362859] text-[#7045C6] dark:text-[#A985FF] font-semibold text-xs flex items-center justify-center shrink-0 mt-0.5 tabular-nums">
                   {index + 1}
                 </span>
                 <span className="leading-relaxed">{step}</span>
@@ -157,26 +156,26 @@ export const ToolPageLayout: React.FC<ToolPageLayoutProps> = ({
         </section>
 
         {tool.examples && tool.examples.length > 0 ? (
-          <section className="bg-white border border-[#E4D9FA] rounded-2xl p-6">
-            <h2 className="text-lg font-bold text-[#38205F] mb-4">
+          <section className="bg-white dark:bg-[#171026] border border-[#E4D9FA] dark:border-[#2F224D] rounded-2xl p-6">
+            <h2 className="text-lg font-bold text-[#38205F] dark:text-[#F3EEFF] mb-4">
               Examples
             </h2>
             <div className="space-y-3">
               {tool.examples.map((ex, idx) => (
                 <div
                   key={idx}
-                  className="rounded-xl bg-[#F7F3FF] border border-[#E4D9FA] p-3.5 text-sm"
+                  className="rounded-xl bg-[#F7F3FF] dark:bg-[#211738] border border-[#E4D9FA] dark:border-[#2F224D] p-3.5 text-sm"
                 >
-                  <p className="text-xs font-semibold text-[#7045C6] mb-1">
+                  <p className="text-xs font-semibold text-[#7045C6] dark:text-[#A985FF] mb-1">
                     Input
                   </p>
-                  <p className="font-mono-tabular text-[#38205F] mb-2">
+                  <p className="font-mono-tabular text-[#38205F] dark:text-[#E5DCFF] mb-2">
                     {ex.input}
                   </p>
-                  <p className="text-xs font-semibold text-[#7045C6] mb-1">
+                  <p className="text-xs font-semibold text-[#7045C6] dark:text-[#A985FF] mb-1">
                     Output
                   </p>
-                  <p className="font-mono-tabular font-semibold text-[#1E1533]">
+                  <p className="font-mono-tabular font-semibold text-[#1E1533] dark:text-[#F3EEFF]">
                     {ex.output}
                   </p>
                 </div>
@@ -184,16 +183,16 @@ export const ToolPageLayout: React.FC<ToolPageLayoutProps> = ({
             </div>
           </section>
         ) : (
-          <section className="bg-white border border-[#E4D9FA] rounded-2xl p-6">
-            <h2 className="text-lg font-bold text-[#38205F] mb-3">
+          <section className="bg-white dark:bg-[#171026] border border-[#E4D9FA] dark:border-[#2F224D] rounded-2xl p-6">
+            <h2 className="text-lg font-bold text-[#38205F] dark:text-[#F3EEFF] mb-3">
               Privacy & Security
             </h2>
-            <p className="text-sm text-[#4A3B69] leading-relaxed mb-3">
+            <p className="text-sm text-[#4A3B69] dark:text-[#C4B6E3] leading-relaxed mb-3">
               Zenvi Tools runs {tool.name} directly inside your web browser
               using client-side JavaScript and HTML5 APIs. Your files and inputs
               are never uploaded to or stored on external servers.
             </p>
-            <p className="text-sm text-[#4A3B69] leading-relaxed">
+            <p className="text-sm text-[#4A3B69] dark:text-[#C4B6E3] leading-relaxed">
               Works on Android Chrome, iPhone Safari, tablets, and desktop
               browsers without installing any software.
             </p>
@@ -203,11 +202,11 @@ export const ToolPageLayout: React.FC<ToolPageLayoutProps> = ({
 
       {/* Tool-Specific FAQs */}
       {tool.faqs.length > 0 && (
-        <section className="mt-10 bg-white border border-[#E4D9FA] rounded-2xl p-6 sm:p-8">
-          <h2 className="text-xl font-bold text-[#38205F] mb-4">
+        <section className="mt-10 bg-white dark:bg-[#171026] border border-[#E4D9FA] dark:border-[#2F224D] rounded-2xl p-6 sm:p-8">
+          <h2 className="text-xl font-bold text-[#38205F] dark:text-[#F3EEFF] mb-4">
             Frequently Asked Questions
           </h2>
-          <div className="divide-y divide-[#F0E8FF]">
+          <div className="divide-y divide-[#F0E8FF] dark:divide-[#281C42]">
             {tool.faqs.map((faq, idx) => {
               const isOpen = openFaqIndex === idx;
               return (
@@ -216,17 +215,17 @@ export const ToolPageLayout: React.FC<ToolPageLayoutProps> = ({
                     type="button"
                     onClick={() => setOpenFaqIndex(isOpen ? null : idx)}
                     aria-expanded={isOpen}
-                    className="w-full flex items-center justify-between gap-4 text-left font-semibold text-sm sm:text-base text-[#38205F] hover:text-[#7045C6] transition-colors cursor-pointer"
+                    className="w-full flex items-center justify-between gap-4 text-left font-semibold text-sm sm:text-base text-[#38205F] dark:text-[#F3EEFF] hover:text-[#7045C6] dark:hover:text-[#A985FF] transition-colors cursor-pointer"
                   >
                     <span>{faq.question}</span>
                     <ChevronDown
-                      className={`w-4 h-4 text-[#7045C6] shrink-0 transition-transform ${
+                      className={`w-4 h-4 text-[#7045C6] dark:text-[#A985FF] shrink-0 transition-transform ${
                         isOpen ? 'rotate-180' : ''
                       }`}
                     />
                   </button>
                   {isOpen && (
-                    <p className="mt-2 text-sm text-[#4A3B69] leading-relaxed">
+                    <p className="mt-2 text-sm text-[#4A3B69] dark:text-[#C4B6E3] leading-relaxed">
                       {faq.answer}
                     </p>
                   )}
@@ -240,7 +239,7 @@ export const ToolPageLayout: React.FC<ToolPageLayoutProps> = ({
       {/* Related Tools */}
       {relatedTools.length > 0 && (
         <section className="mt-12">
-          <h2 className="text-xl font-bold text-[#38205F] mb-5">
+          <h2 className="text-xl font-bold text-[#38205F] dark:text-[#F3EEFF] mb-5">
             Related Tools
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

@@ -14,103 +14,27 @@
     overflow-x: hidden;
   }
 
-  html.dark body {
-    background-color: #0E0918;
-    color: #F4F0FF;
+  .dark body {
+    background-color: #0F0A1A;
+    color: #F3EEFF;
+  }
+
+  .dark input:not([type='checkbox']):not([type='radio']):not([type='range']):not([type='color']),
+  .dark textarea,
+  .dark select {
+    background-color: #120C20;
+    color: #F3EEFF;
+    border-color: #362859;
+  }
+
+  .dark input::placeholder,
+  .dark textarea::placeholder {
+    color: #8E7DB5;
   }
 
   h1, h2, h3, h4 {
     text-wrap: balance;
   }
-}
-
-/* Dark mode surface, border, and typography overrides preserving Zenvi Tools purple identity */
-html.dark .bg-white {
-  background-color: #181126;
-}
-
-html.dark .bg-\[\#F7F3FF\] {
-  background-color: #211736;
-}
-
-html.dark .bg-\[\#F7F3FF\]\/60,
-html.dark .bg-\[\#F7F3FF\]\/80 {
-  background-color: rgba(33, 23, 54, 0.78);
-}
-
-html.dark .bg-\[\#EDE4FF\],
-html.dark .bg-\[\#F0E8FF\] {
-  background-color: #2B1E47;
-}
-
-html.dark .hover\:bg-\[\#F7F3FF\]:hover {
-  background-color: #261B3D;
-}
-
-html.dark .hover\:bg-\[\#EDE4FF\]:hover {
-  background-color: #322452;
-}
-
-html.dark .border-\[\#E4D9FA\],
-html.dark .border-\[\#D6C6F7\],
-html.dark .border-\[\#F0E8FF\] {
-  border-color: #322452;
-}
-
-html.dark .divide-\[\#F0E8FF\] > :not(:last-child) {
-  border-color: #322452;
-}
-
-html.dark .text-\[\#38205F\],
-html.dark .text-\[\#1E1533\] {
-  color: #F4F0FF;
-}
-
-html.dark .text-\[\#4A3B69\],
-html.dark .text-\[\#5B4D7A\] {
-  color: #C7B8E8;
-}
-
-html.dark .text-\[\#7B6B9E\],
-html.dark .text-\[\#8C7CAE\],
-html.dark .text-\[\#9A8BB8\] {
-  color: #9D8CC2;
-}
-
-html.dark .text-\[\#7045C6\] {
-  color: #A985F7;
-}
-
-html.dark .bg-\[\#7045C6\].text-white,
-html.dark .bg-\[\#7045C6\] .text-white {
-  color: #FFFFFF;
-}
-
-html.dark input:not([type='checkbox']):not([type='radio']):not([type='range']):not([type='color']),
-html.dark select,
-html.dark textarea {
-  background-color: #130D20;
-  color: #F4F0FF;
-  border-color: #3A2A60;
-  color-scheme: dark;
-}
-
-html.dark input::placeholder,
-html.dark textarea::placeholder {
-  color: #8574AA;
-}
-
-html.dark .bg-red-50 {
-  background-color: rgba(127, 29, 29, 0.28);
-}
-
-html.dark .border-red-200 {
-  border-color: rgba(248, 113, 113, 0.35);
-}
-
-html.dark .text-red-700,
-html.dark .text-red-800 {
-  color: #FCA5A5;
 }
 
 .font-mono-tabular {

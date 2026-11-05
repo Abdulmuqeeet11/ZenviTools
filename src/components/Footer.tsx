@@ -1,4 +1,3 @@
-'use client';
 import React from 'react';
 import { LogoIcon } from './Logo';
 import { handleLinkClick } from '../utils/navigation';
@@ -7,34 +6,34 @@ export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-white border-t border-[#E4D9FA] mt-16">
+    <footer className="bg-white dark:bg-[#171026] border-t border-[#E4D9FA] dark:border-[#2F224D] mt-16 transition-colors duration-150">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1 space-y-3">
             <a
               href="/"
               onClick={(e) => handleLinkClick(e, '/')}
-              className="inline-flex items-center gap-2.5 text-lg font-bold text-[#38205F]"
+              className="inline-flex items-center gap-2.5 text-lg font-bold text-[#38205F] dark:text-[#F3EEFF]"
             >
               <LogoIcon className="w-7 h-7" />
               <span>Zenvi Tools</span>
             </a>
-            <p className="text-sm text-[#5B4D7A] leading-relaxed">
+            <p className="text-sm text-[#5B4D7A] dark:text-[#B5A6D6] leading-relaxed">
               All Your Tools. One Place. Fast, free, and privacy-focused online
               utilities that run directly in your browser.
             </p>
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-[#38205F] mb-3">
+            <h3 className="text-sm font-semibold text-[#38205F] dark:text-[#F3EEFF] mb-3">
               Tool Categories
             </h3>
-            <ul className="space-y-2 text-sm text-[#5B4D7A]">
+            <ul className="space-y-2 text-sm text-[#5B4D7A] dark:text-[#B5A6D6]">
               <li>
                 <a
                   href="/pdf-tools"
                   onClick={(e) => handleLinkClick(e, '/pdf-tools')}
-                  className="hover:text-[#7045C6] transition-colors"
+                  className="hover:text-[#7045C6] dark:hover:text-[#A985FF] transition-colors"
                 >
                   PDF & Document Tools
                 </a>
@@ -43,7 +42,7 @@ export const Footer: React.FC = () => {
                 <a
                   href="/calculators"
                   onClick={(e) => handleLinkClick(e, '/calculators')}
-                  className="hover:text-[#7045C6] transition-colors"
+                  className="hover:text-[#7045C6] dark:hover:text-[#A985FF] transition-colors"
                 >
                   Calculator Tools
                 </a>
@@ -52,7 +51,7 @@ export const Footer: React.FC = () => {
                 <a
                   href="/image-tools"
                   onClick={(e) => handleLinkClick(e, '/image-tools')}
-                  className="hover:text-[#7045C6] transition-colors"
+                  className="hover:text-[#7045C6] dark:hover:text-[#A985FF] transition-colors"
                 >
                   Image Tools
                 </a>
@@ -61,7 +60,7 @@ export const Footer: React.FC = () => {
                 <a
                   href="/text-tools"
                   onClick={(e) => handleLinkClick(e, '/text-tools')}
-                  className="hover:text-[#7045C6] transition-colors"
+                  className="hover:text-[#7045C6] dark:hover:text-[#A985FF] transition-colors"
                 >
                   Text Tools
                 </a>
@@ -70,7 +69,7 @@ export const Footer: React.FC = () => {
                 <a
                   href="/qr-other-tools"
                   onClick={(e) => handleLinkClick(e, '/qr-other-tools')}
-                  className="hover:text-[#7045C6] transition-colors"
+                  className="hover:text-[#7045C6] dark:hover:text-[#A985FF] transition-colors"
                 >
                   QR & Utility Tools
                 </a>
@@ -79,15 +78,15 @@ export const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-[#38205F] mb-3">
+            <h3 className="text-sm font-semibold text-[#38205F] dark:text-[#F3EEFF] mb-3">
               Popular Utilities
             </h3>
-            <ul className="space-y-2 text-sm text-[#5B4D7A]">
+            <ul className="space-y-2 text-sm text-[#5B4D7A] dark:text-[#B5A6D6]">
               <li>
                 <a
                   href="/tool/merge-pdf"
                   onClick={(e) => handleLinkClick(e, '/tool/merge-pdf')}
-                  className="hover:text-[#7045C6] transition-colors"
+                  className="hover:text-[#7045C6] dark:hover:text-[#A985FF] transition-colors"
                 >
                   Merge PDF
                 </a>
@@ -96,7 +95,7 @@ export const Footer: React.FC = () => {
                 <a
                   href="/tool/image-compressor"
                   onClick={(e) => handleLinkClick(e, '/tool/image-compressor')}
-                  className="hover:text-[#7045C6] transition-colors"
+                  className="hover:text-[#7045C6] dark:hover:text-[#A985FF] transition-colors"
                 >
                   Image Compressor
                 </a>
@@ -105,7 +104,7 @@ export const Footer: React.FC = () => {
                 <a
                   href="/tool/percentage-calculator"
                   onClick={(e) => handleLinkClick(e, '/tool/percentage-calculator')}
-                  className="hover:text-[#7045C6] transition-colors"
+                  className="hover:text-[#7045C6] dark:hover:text-[#A985FF] transition-colors"
                 >
                   Percentage Calculator
                 </a>
@@ -114,7 +113,7 @@ export const Footer: React.FC = () => {
                 <a
                   href="/tool/word-counter"
                   onClick={(e) => handleLinkClick(e, '/tool/word-counter')}
-                  className="hover:text-[#7045C6] transition-colors"
+                  className="hover:text-[#7045C6] dark:hover:text-[#A985FF] transition-colors"
                 >
                   Word Counter
                 </a>
@@ -123,7 +122,7 @@ export const Footer: React.FC = () => {
                 <a
                   href="/tool/qr-code-generator"
                   onClick={(e) => handleLinkClick(e, '/tool/qr-code-generator')}
-                  className="hover:text-[#7045C6] transition-colors"
+                  className="hover:text-[#7045C6] dark:hover:text-[#A985FF] transition-colors"
                 >
                   QR Code Generator
                 </a>
@@ -132,15 +131,15 @@ export const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-[#38205F] mb-3">
+            <h3 className="text-sm font-semibold text-[#38205F] dark:text-[#F3EEFF] mb-3">
               Information & Legal
             </h3>
-            <ul className="space-y-2 text-sm text-[#5B4D7A]">
+            <ul className="space-y-2 text-sm text-[#5B4D7A] dark:text-[#B5A6D6]">
               <li>
                 <a
                   href="/about"
                   onClick={(e) => handleLinkClick(e, '/about')}
-                  className="hover:text-[#7045C6] transition-colors"
+                  className="hover:text-[#7045C6] dark:hover:text-[#A985FF] transition-colors"
                 >
                   About Us
                 </a>
@@ -149,7 +148,7 @@ export const Footer: React.FC = () => {
                 <a
                   href="/contact"
                   onClick={(e) => handleLinkClick(e, '/contact')}
-                  className="hover:text-[#7045C6] transition-colors"
+                  className="hover:text-[#7045C6] dark:hover:text-[#A985FF] transition-colors"
                 >
                   Contact Us
                 </a>
@@ -158,7 +157,7 @@ export const Footer: React.FC = () => {
                 <a
                   href="/privacy-policy"
                   onClick={(e) => handleLinkClick(e, '/privacy-policy')}
-                  className="hover:text-[#7045C6] transition-colors"
+                  className="hover:text-[#7045C6] dark:hover:text-[#A985FF] transition-colors"
                 >
                   Privacy Policy
                 </a>
@@ -167,7 +166,7 @@ export const Footer: React.FC = () => {
                 <a
                   href="/terms"
                   onClick={(e) => handleLinkClick(e, '/terms')}
-                  className="hover:text-[#7045C6] transition-colors"
+                  className="hover:text-[#7045C6] dark:hover:text-[#A985FF] transition-colors"
                 >
                   Terms and Conditions
                 </a>
@@ -176,7 +175,7 @@ export const Footer: React.FC = () => {
                 <a
                   href="/disclaimer"
                   onClick={(e) => handleLinkClick(e, '/disclaimer')}
-                  className="hover:text-[#7045C6] transition-colors"
+                  className="hover:text-[#7045C6] dark:hover:text-[#A985FF] transition-colors"
                 >
                   Disclaimer
                 </a>
@@ -185,7 +184,7 @@ export const Footer: React.FC = () => {
                 <a
                   href="/faq"
                   onClick={(e) => handleLinkClick(e, '/faq')}
-                  className="hover:text-[#7045C6] transition-colors"
+                  className="hover:text-[#7045C6] dark:hover:text-[#A985FF] transition-colors"
                 >
                   FAQ
                 </a>
@@ -194,7 +193,7 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-[#E4D9FA] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#6E5F8F]">
+        <div className="mt-10 pt-6 border-t border-[#E4D9FA] dark:border-[#2F224D] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#6E5F8F] dark:text-[#9E8EC4]">
           <p>© {currentYear} Zenvi Tools. All rights reserved.</p>
           <p>Client-side processing · Files stay on your device</p>
         </div>
