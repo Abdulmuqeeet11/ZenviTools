@@ -1,0 +1,6 @@
+{
+  "name": "Zenvi Tools",
+  "description": "All Your Tools. One Place. Free, privacy-first online PDF, calculator, image, text, and QR utilities that run directly in your browser.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": []
+}
