@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 import { LogoIcon } from './Logo';
 import { handleLinkClick, navigateTo } from '../utils/navigation';
 
@@ -19,10 +19,22 @@ const NAV_LINKS = [
 
 export const Header: React.FC<HeaderProps> = ({ currentPath }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [isDark, setIsDark] = useState(() =>
+    typeof document !== 'undefined' && document.documentElement.classList.contains('dark')
+  );
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', isDark);
+    try {
+      localStorage.setItem('zenvi-theme', isDark ? 'dark' : 'light');
+    } catch {
+      // Ignore storage errors
+    }
+  }, [isDark]);
 
   return (
     <header className="sticky top-0 z-40 bg-white border-b border-[#E4D9FA]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4 sm:gap-6">
         {/* Zone 1: Brand wordmark */}
         <a
           href="/"
@@ -60,8 +72,18 @@ export const Header: React.FC<HeaderProps> = ({ currentPath }) => {
           })}
         </nav>
 
-        {/* Zone 3: Primary action + mobile toggle */}
-        <div className="flex items-center gap-3 shrink-0">
+        {/* Zone 3: Dark mode toggle, primary action + mobile toggle */}
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          <button
+            type="button"
+            onClick={() => setIsDark((prev) => !prev)}
+            aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+            title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+            className="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-[#E4D9FA] bg-[#F7F3FF] text-[#38205F] hover:border-[#7045C6] transition-colors cursor-pointer"
+          >
+            {isDark ? <Sun className="w-4 h-4 text-[#A985F7]" /> : <Moon className="w-4 h-4 text-[#7045C6]" />}
+          </button>
+
           <button
             type="button"
             onClick={() => {

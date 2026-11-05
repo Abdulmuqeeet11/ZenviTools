@@ -1,3 +1,4 @@
+'use client';
 import React, { useEffect, useState } from 'react';
 import { ChevronRight, ShieldCheck, ChevronDown } from 'lucide-react';
 import { ToolDefinition } from '../types/tools';
