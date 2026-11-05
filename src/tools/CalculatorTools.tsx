@@ -1,3 +1,4 @@
+'use client';
 import React, { useState, useEffect } from 'react';
 import { RotateCcw, Plus, Trash2, AlertCircle, Copy, Check, Calculator } from 'lucide-react';
 import {

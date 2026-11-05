@@ -1,3 +1,4 @@
+'use client';
 import React, { useState, useEffect } from 'react';
 import { CATEGORIES, TOOLS_REGISTRY, searchTools } from '../data/toolsRegistry';
 import { ToolCategoryId } from '../types/tools';
@@ -6,8 +7,10 @@ import { ToolCard } from '../components/ToolCard';
 import { usePageSeo } from '../components/ToolPageLayout';
 
 export const AllToolsPage: React.FC = () => {
-  const params = new URLSearchParams(window.location.search);
-  const initialQ = params.get('q') || '';
+  const initialQ =
+    typeof window !== 'undefined'
+      ? new URLSearchParams(window.location.search).get('q') || ''
+      : '';
 
   const [query, setQuery] = useState(initialQ);
   const [selectedCategory, setSelectedCategory] = useState<ToolCategoryId | 'all'>('all');
@@ -21,7 +24,7 @@ export const AllToolsPage: React.FC = () => {
   useEffect(() => {
     const p = new URLSearchParams(window.location.search);
     setQuery(p.get('q') || '');
-  }, [window.location.search]);
+  }, []);
 
   const filtered = searchTools(query).filter((t) =>
     selectedCategory === 'all' ? true : t.category === selectedCategory
